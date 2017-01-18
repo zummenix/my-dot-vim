@@ -15,5 +15,17 @@ set laststatus=2
 set splitright
 set splitbelow
 
+" Turn backup off
+set nobackup
+set noswapfile
+
+" Indentation
+set expandtab
+set smarttab
+set shiftwidth=4
+set tabstop=4
+set autoindent
+set smartindent
+
 filetype plugin indent on
 
