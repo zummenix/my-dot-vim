@@ -18,6 +18,7 @@ set splitbelow
 " Turn backup off
 set nobackup
 set noswapfile
+set nowritebackup
 
 " Indentation
 set expandtab
