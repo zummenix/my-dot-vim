@@ -17,6 +17,7 @@ Plug 'cespare/vim-toml'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' }
 Plug 'justinmk/vim-sneak'
+Plug 'jremmen/vim-ripgrep'
 call plug#end()
 
 set hidden
