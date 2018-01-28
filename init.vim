@@ -1,27 +1,28 @@
 language en_US
 
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'iCyMind/NeoSolarized'
 Plug 'rust-lang/rust.vim'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/denite.nvim'
-Plug 'Shougo/vimfiler.vim', { 'on': 'VimFiler' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'cespare/vim-toml'
-Plug 'scrooloose/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' }
 Plug 'justinmk/vim-sneak'
-Plug 'jremmen/vim-ripgrep'
+Plug 'chriskempson/base16-vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'wincent/terminus'
+Plug 'wincent/ferret'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 set hidden
 set number
+set relativenumber
 set noshowmode
 set incsearch
 set ignorecase
@@ -30,25 +31,27 @@ set nohlsearch
 set signcolumn=yes
 set completeopt=menu,preview,noinsert
 set cursorline
+set backspace=indent,start,eol
+set autoindent
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
 
-filetype on
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 set splitright
 set splitbelow
 
 let mapleader="\<SPACE>"
 
-inoremap ;; <Esc>
 " <TAB>: completion.
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 nmap <Leader><Leader> <c-^>
+
+nnoremap <Leader>w :write<CR>
+nnoremap <Leader>q :bdelete<CR>
 
 nnoremap <Tab> :bnext!<CR>
 nnoremap <S-Tab> :bprev!<CR>
@@ -64,15 +67,14 @@ xmap F <Plug>Sneak_F
 omap f <Plug>Sneak_f
 omap F <Plug>Sneak_F
 
-map ` :VimFiler -explorer<CR>
-map ~ :VimFilerCurrentDir -explorer -find<CR>
-
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ }
 
-set background=light
-colorscheme NeoSolarized
+if filereadable(expand("~/.vimrc_background"))
+    let base16colorspace=256
+    source ~/.vimrc_background
+endif
 
 let g:airline#extensions#tabline#enabled=1
 set laststatus=2
