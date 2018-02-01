@@ -18,7 +18,13 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'wincent/terminus'
 Plug 'wincent/ferret'
 Plug 'tpope/vim-commentary'
+Plug 'elmcast/elm-vim'
 call plug#end()
+
+let g:elm_setup_keybindings = 0
+let g:elm_format_autosave = 1
+
+let g:rustfmt_autosave = 1
 
 set hidden
 set number
@@ -78,8 +84,6 @@ endif
 
 let g:airline#extensions#tabline#enabled=1
 set laststatus=2
-
-let g:rustfmt_autosave = 1
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
