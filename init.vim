@@ -66,6 +66,13 @@ nnoremap <S-Tab> :bprev!<CR>
 nnoremap <Leader>p :CtrlP<CR>
 nnoremap <Leader>t :CtrlP<CR>
 
+" Redraw the window.
+nnoremap <Leader>l :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
+
+" Don't loose visual selection when using indent.
+xnoremap < <gv
+xnoremap > >gv
+
 let g:sneak#s_next = 1
 nmap f <Plug>Sneak_f
 nmap F <Plug>Sneak_F
