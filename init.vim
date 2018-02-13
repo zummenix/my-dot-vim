@@ -81,6 +81,13 @@ xmap F <Plug>Sneak_F
 omap f <Plug>Sneak_f
 omap F <Plug>Sneak_F
 
+let g:AutoPairsMapSpace = 0 " Disable auto pairs space mapping to use for undo.
+
+" Add more granularity to undo history.
+inoremap <space> <space><c-g>u
+inoremap . .<c-g>u
+inoremap , ,<c-g>u
+
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ }
