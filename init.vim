@@ -14,7 +14,6 @@ Plug 'cespare/vim-toml'
 Plug 'ctrlpvim/ctrlp.vim', { 'on': 'CtrlP' }
 Plug 'justinmk/vim-sneak'
 Plug 'chriskempson/base16-vim'
-Plug 'jiangmiao/auto-pairs'
 Plug 'wincent/terminus'
 Plug 'wincent/ferret'
 Plug 'tpope/vim-commentary'
@@ -80,8 +79,6 @@ xmap f <Plug>Sneak_f
 xmap F <Plug>Sneak_F
 omap f <Plug>Sneak_f
 omap F <Plug>Sneak_F
-
-let g:AutoPairsMapSpace = 0 " Disable auto pairs space mapping to use for undo.
 
 " Add more granularity to undo history.
 inoremap <space> <space><c-g>u
