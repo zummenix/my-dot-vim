@@ -43,6 +43,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+set scrolloff=3
 
 filetype plugin indent on
 
@@ -88,6 +89,10 @@ inoremap , ,<c-g>u
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ }
+
+nnoremap <silent> gh :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> gr :call LanguageClient_textDocument_rename()<CR>
 
 if filereadable(expand("~/.vimrc_background"))
     let base16colorspace=256
