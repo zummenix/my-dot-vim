@@ -58,7 +58,6 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 nmap <Leader><Leader> <c-^>
 
-nnoremap <Leader>w :write<CR>
 nnoremap <Leader>q :bdelete<CR>
 
 nnoremap <Tab> :bnext!<CR>
