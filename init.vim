@@ -20,6 +20,8 @@ Plug 'tpope/vim-commentary'
 Plug 'elmcast/elm-vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'pangloss/vim-javascript'
+Plug 'machakann/vim-highlightedyank'
+Plug 'pearofducks/ansible-vim'
 call plug#end()
 
 let g:elm_setup_keybindings = 0
